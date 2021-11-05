@@ -4,13 +4,13 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: 120.27.247.160:8848
     sentinel:
       transport:
-        dashboard: localhost:8080
+        dashboard: 120.27.247.160:8080
         port: 8719
   zipkin:
-    base-url: http://localhost:9411
+    base-url: http://120.27.247.160:9411
     discovery-client-enabled: false
     sender:
       type: web
@@ -19,7 +19,7 @@ spring:
       probability: 1
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.16.116.100:3306/guli_sms
+    url: jdbc:mysql://127.0.0.1:3306/guli_sms?characterEncoding=utf-8&useSSL=false
     username: root
     password: root
 feign:

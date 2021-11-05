@@ -28,6 +28,7 @@ public class SkuLadderEntity implements Serializable {
 	/**
 	 * spu_id
 	 */
+
 	private Long skuId;
 	/**
 	 * 满几件

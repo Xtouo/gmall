@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@SpringBootApplication(scanBasePackages = "com.atguigu.gmall")
+@SpringBootApplication
 @EnableFeignClients
 @EnableSwagger2
 @MapperScan("com.atguigu.gmall.pms.mapper")

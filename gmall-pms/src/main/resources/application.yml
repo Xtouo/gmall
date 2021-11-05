@@ -4,13 +4,16 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+        server-addr: 120.27.247.160:8848
     sentinel:
       transport:
-        dashboard: localhost:8080
+        dashboard: 120.27.247.160:8080
         port: 8719
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
   zipkin:
-    base-url: http://localhost:9411
+    base-url: http://120.27.247.160:9411
     discovery-client-enabled: false
     sender:
       type: web
@@ -22,6 +25,9 @@ spring:
     url: jdbc:mysql://localhost:3306/guli_pms?characterEncoding=utf-8&useSSL=false
     username: root
     password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 feign:
   sentinel:
     enabled: true
@@ -31,3 +37,7 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+ribbon:
+  ReadTimeout:  5000
+  ConnectTimeout: 5000
+
