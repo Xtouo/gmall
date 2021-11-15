@@ -66,5 +66,7 @@ public class SkuBoundsServiceImpl extends ServiceImpl<SkuBoundsMapper, SkuBounds
         BeanUtils.copyProperties(skuSaleVo,skuLadder);
         skuLadder.setAddOther(skuSaleVo.getLadderAddOther());
         skuLadderMapper.insert(skuLadder);
+
+
     }
 }

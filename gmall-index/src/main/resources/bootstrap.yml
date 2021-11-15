@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: index-service
+  cloud:
+    nacos:
+      config:
+        server-addr: 120.27.247.160:8848

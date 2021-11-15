@@ -1,0 +1,77 @@
+#server:
+#  port: 18086
+#spring:
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 120.27.247.160:8848
+#    sentinel:
+#      transport:
+#        dashboard: 120.27.247.160:8080
+#        port: 8719
+#  zipkin:
+#    base-url: http://120.27.247.160:9411
+#    discovery-client-enabled: false
+#    sender:
+#      type: web
+#  sleuth:
+#    sampler:
+#      probability: 1
+#  elasticsearch:
+#    rest:
+#      uris: http://192.168.66.66:9200
+#feign:
+#  sentinel:
+#    enabled: true
+#logging:
+#  level:
+#    com.atguigu.gmall.search: info
+
+server:
+  port: 18086
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.27.247.160:8848
+    sentinel:
+      transport:
+        dashboard: 120.27.247.160:8080
+        port: 8719
+  zipkin:
+    base-url: http://120.27.247.160:9411
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  elasticsearch:
+    rest:
+      uris: http://192.168.66.66:9200
+  jackson:
+    default-property-inclusion: non_null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  thymeleaf:
+    cache: false
+  rabbitmq:
+    host: 192.168.66.66
+    port: 5672
+    username: admin
+    password: 123456
+    virtual-host: gmall
+    listener:
+      type: simple
+      simple:
+        prefetch: 1    # 能者多劳模式
+        concurrency: 4  # 指定线程数量
+feign:
+  sentinel:
+    enabled: true
+logging:
+  level:
+    com.atguigu.gmall.search: debug

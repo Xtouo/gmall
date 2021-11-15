@@ -1,0 +1,36 @@
+server:
+  port: 18083
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.27.247.160:8848
+    sentinel:
+      transport:
+        dashboard: 120.27.247.160:8080
+        port: 8719
+  zipkin:
+    base-url: http://120.27.247.160:9411
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/guli_wms
+    username: root
+    password: root
+feign:
+  sentinel:
+    enabled: true
+mybatis-plus:
+  mapper-locations: classpath:mapper/wms/**/*.xml
+  type-aliases-package: com.atguigu.gmall.wms.entity
+  global-config:
+    db-config:
+      id-type: auto
+logging:
+  level:
+    com.atguigu.gmall.wms: debug

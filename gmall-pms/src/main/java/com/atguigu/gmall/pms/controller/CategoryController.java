@@ -93,13 +93,19 @@ public class CategoryController {
     }
 
     @GetMapping("parent/{id}")
-    public ResponseVo parent(@PathVariable Long id){
+    public ResponseVo<List<CategoryEntity>> parent(@PathVariable Long id){
         QueryWrapper<CategoryEntity> queryWrapper = new QueryWrapper<>();
         if (id!=-1){
             queryWrapper.eq("parent_id",id);
         }
         List<CategoryEntity> list = categoryService.list(queryWrapper);
         return ResponseVo.ok(list);
+    }
+
+    @GetMapping("subsByPid/{pid}")
+    public ResponseVo<List<CategoryEntity>> queryLvl2WithSubsByPid(@PathVariable Long pid){
+        List<CategoryEntity> categoryEntities = categoryService.queryLvl2WithSubsByPid(pid);
+        return ResponseVo.ok(categoryEntities);
     }
 
 }

@@ -53,7 +53,7 @@ public class AttrController {
     }
 
     @GetMapping("category/{cid}")
-    public ResponseVo category(@PathVariable Long cid ,Integer type,Integer searchType){
+    public ResponseVo<List<AttrEntity>> category(@PathVariable Long cid ,Integer type,Integer searchType){
         List<AttrEntity> list = attrService.getAttrListByCid(cid,type,searchType);
         return ResponseVo.ok(list);
     }

@@ -27,6 +27,10 @@
         <module>gmall-ums</module>
         <module>gmall-wms</module>
         <module>gmall-sms-interface</module>
+        <module>gmall-search</module>
+        <module>gmall-pms-interface</module>
+        <module>gmall-wms-interface</module>
+        <module>gmall-index</module>
     </modules>
 
     <properties>

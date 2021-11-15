@@ -28,11 +28,19 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  rabbitmq:
+    host: 192.168.66.66
+    port: 5672
+    username: admin
+    password: 123456
+    virtual-host: gmall
+    publisher-confirm-type: correlated  #确认模式类型
+    publisher-returns: true #开启消费者确认模式
 feign:
   sentinel:
     enabled: true
 mybatis-plus:
-  mapper-locations: classpath:mapper/pms/**/*.xml
+  mapper-locations: classpath:mapper/pms/*.xml
   type-aliases-package: com.atguigu.gmall.pms.entity
   global-config:
     db-config:
@@ -40,4 +48,5 @@ mybatis-plus:
 ribbon:
   ReadTimeout:  5000
   ConnectTimeout: 5000
+
 
