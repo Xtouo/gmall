@@ -90,4 +90,10 @@ public class SkuImagesController {
         return ResponseVo.ok();
     }
 
+    @GetMapping("querySkuImg/{skuId}")
+    public ResponseVo<List<SkuImagesEntity>> querySkuImgBySkuId(@PathVariable Long skuId){
+        List<SkuImagesEntity> skuImagesEntities = skuImagesService.querySkuImgBySkuId(skuId);
+        return ResponseVo.ok(skuImagesEntities);
+    }
+
 }

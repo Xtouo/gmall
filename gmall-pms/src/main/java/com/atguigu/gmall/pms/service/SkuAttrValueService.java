@@ -1,5 +1,6 @@
 package com.atguigu.gmall.pms.service;
 
+import com.atguigu.gmall.pms.vo.SaleAttrValueVo;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.atguigu.gmall.common.bean.PageResultVo;
 import com.atguigu.gmall.common.bean.PageParamVo;
@@ -20,5 +21,13 @@ public interface SkuAttrValueService extends IService<SkuAttrValueEntity> {
     PageResultVo queryPage(PageParamVo paramVo);
 
     List<SkuAttrValueEntity> getSkuValueBySkuIdAndCid(Long skuId, Long cid);
+
+    List<SaleAttrValueVo> querySkuSalesAttrBySpuId(Long spuId);
+
+    String querySkuSalesAttrMappingSkuIdBySpuId(Long spuId);
+
+    List<SkuAttrValueEntity> querySkuSaleAttrBySkuId(Long skuId);
+
+    List<SkuAttrValueEntity> querySkuSalesAttrBySpuId2(Long spuId);
 }
 

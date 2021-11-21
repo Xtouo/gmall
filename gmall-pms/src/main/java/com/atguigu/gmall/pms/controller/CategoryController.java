@@ -108,4 +108,10 @@ public class CategoryController {
         return ResponseVo.ok(categoryEntities);
     }
 
+    @GetMapping("queryParentId/{subId}")
+    public ResponseVo<List<CategoryEntity>> queryParentIdBySubId(@PathVariable Long subId){
+        List<CategoryEntity> categoryEntities = categoryService.queryParentIdBySubId(subId);
+        return ResponseVo.ok(categoryEntities);
+    }
+
 }

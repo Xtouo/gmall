@@ -1,7 +1,9 @@
 package com.atguigu.gmall.pms.controller;
 
 import java.util.List;
+import java.util.Map;
 
+import com.atguigu.gmall.pms.vo.SaleAttrValueVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.atguigu.gmall.pms.entity.SkuAttrValueEntity;
@@ -34,16 +35,35 @@ public class SkuAttrValueController {
     @Autowired
     private SkuAttrValueService skuAttrValueService;
 
+    @GetMapping("querySkuSalesAttrMappingSkuIdBySpuId/{spuId}")
+    public ResponseVo<String> querySpuSalesAttrMappingSkuIdBySpuId(@PathVariable Long spuId){
+        String json = skuAttrValueService.querySkuSalesAttrMappingSkuIdBySpuId(spuId);
+        return ResponseVo.ok(json);
+    }
 
+    @GetMapping("querySkuSalesAttrBySpuId/{spuId}")
+    public ResponseVo<List<SaleAttrValueVo>> querySkuSalesAttrBySpuId(@PathVariable Long spuId){
+        List<SaleAttrValueVo> saleAttrValueVos = skuAttrValueService.querySkuSalesAttrBySpuId(spuId);
+        return ResponseVo.ok(saleAttrValueVos);
+    }
 
+    @GetMapping("test/{spuId}")
+    public ResponseVo<List<SkuAttrValueEntity>> querySkuSalesAttrBySpuId2(@PathVariable Long spuId){
+        List<SkuAttrValueEntity> saleAttrValueVos = skuAttrValueService.querySkuSalesAttrBySpuId2(spuId);
+        return ResponseVo.ok(saleAttrValueVos);
+    }
 
     @GetMapping("searchSkuValue/{skuId}")
     public ResponseVo<List<SkuAttrValueEntity>> searchSkuValue(@PathVariable Long skuId,Long cid){
-
         List<SkuAttrValueEntity> skuAttrValueEntityList = skuAttrValueService.getSkuValueBySkuIdAndCid(skuId,cid);
         return ResponseVo.ok(skuAttrValueEntityList);
     }
 
+    @GetMapping("querySkuSaleAttr/{skuId}")
+    public ResponseVo<List<SkuAttrValueEntity>> querySkuSaleAttrBySkuId(@PathVariable Long skuId){
+        List<SkuAttrValueEntity> skuAttrValueEntitys = skuAttrValueService.querySkuSaleAttrBySkuId(skuId);
+        return ResponseVo.ok(skuAttrValueEntitys);
+    }
 
     /**
      * 列表
@@ -63,7 +83,6 @@ public class SkuAttrValueController {
     @ApiOperation("详情查询")
     public ResponseVo<SkuAttrValueEntity> querySkuAttrValueById(@PathVariable("id") Long id){
 		SkuAttrValueEntity skuAttrValue = skuAttrValueService.getById(id);
-
         return ResponseVo.ok(skuAttrValue);
     }
 

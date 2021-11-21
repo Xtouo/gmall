@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 120.27.247.160:8848
+        server-addr: 192.168.66.66:8080
     sentinel:
       transport:
         dashboard: 120.27.247.160:8080
@@ -22,9 +22,9 @@ spring:
       probability: 1
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/guli_sms?characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://150.158.158.189:3306/guli_sms?characterEncoding=utf-8&useSSL=false
     username: root
-    password: root
+    password: luo2828
 feign:
   sentinel:
     enabled: false

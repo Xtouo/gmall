@@ -4,7 +4,4 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 120.27.247.160:8848
-        namespace: 207e401a-6c38-4830-8df5-760e5312f660
-        group: dev
-        file-extension: yml
+        server-addr: 192.168.66.66:8080

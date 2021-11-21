@@ -2,6 +2,7 @@ package com.atguigu.gmall.pms.controller;
 
 import java.util.List;
 
+import com.atguigu.gmall.pms.entity.CategoryEntity;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.R;
 import io.swagger.annotations.Api;
@@ -35,7 +36,6 @@ public class SkuController {
 
     @Autowired
     private SkuService skuService;
-
 
 
     @GetMapping("searchSkuBySpuId/{spuId}")

@@ -56,6 +56,7 @@ public class SpuAttrValueServiceImpl extends ServiceImpl<SpuAttrValueMapper, Spu
         }
     }
 
+
     @Override
     public List<SpuAttrValueEntity> getSpuValueBySkuIdAndCid(Long spuId, Long cid) {
         List<AttrEntity> attrListByCid = attrService.getAttrListByCid(cid, 1, 1);
@@ -65,5 +66,4 @@ public class SpuAttrValueServiceImpl extends ServiceImpl<SpuAttrValueMapper, Spu
         List<Long> collect = attrListByCid.stream().map(AttrEntity::getCategoryId).collect(Collectors.toList());
         return baseMapper.selectList(new QueryWrapper<SpuAttrValueEntity>().eq("spu_id",spuId).in("attr_id",collect));
     }
-
 }

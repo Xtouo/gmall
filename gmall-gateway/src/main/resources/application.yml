@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 120.27.247.160:8848
+        server-addr: 192.168.66.66:8080
     gateway:
       routes:
         - id: pms-route
@@ -39,4 +39,16 @@ spring:
           uri: lb://index-service
           predicates:
             - Path=/index/**
+        - id: item-route  # 异步请求路由
+          uri: lb://item-service
+          predicates:
+            - Path=/*.html
+        - id: auth-route
+          uri: lb://auth-service
+          predicates:
+            - Host=sso.gmall.com, auth.gmall.com
+jwt:
+  pubFilePath: D:\gmall-rsa\rsa.pub
+  cookieName: GMALL-TOKEN
+
 

@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 120.27.247.160:8848
+        server-addr: 192.168.66.66:8080
     sentinel:
       transport:
         dashboard: 120.27.247.160:8080
@@ -28,3 +28,6 @@ feign:
 logging:
   level:
     com.atguigu.gmall.index: debug
+ribbon:
+  ReadTimeout:  5000
+  ConnectTimeout: 5000

@@ -34,4 +34,11 @@ public class IndexController {
         return ResponseVo.ok(categoryEntities);
     }
 
+    @GetMapping("index/test/lock")
+    @ResponseBody
+    public ResponseVo testLock(){
+        this.indexService.testLock();
+        return ResponseVo.ok();
+    }
+
 }

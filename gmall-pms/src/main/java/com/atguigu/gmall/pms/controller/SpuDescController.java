@@ -53,7 +53,6 @@ public class SpuDescController {
     @ApiOperation("详情查询")
     public ResponseVo<SpuDescEntity> querySpuDescById(@PathVariable("spuId") Long spuId){
 		SpuDescEntity spuDesc = spuDescService.getById(spuId);
-
         return ResponseVo.ok(spuDesc);
     }
 

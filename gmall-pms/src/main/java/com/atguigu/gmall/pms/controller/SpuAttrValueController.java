@@ -1,6 +1,7 @@
 package com.atguigu.gmall.pms.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import com.atguigu.gmall.pms.entity.SkuAttrValueEntity;
 import io.swagger.annotations.Api;
@@ -34,6 +35,8 @@ public class SpuAttrValueController {
 
     @Autowired
     private SpuAttrValueService spuAttrValueService;
+
+
 
 
     @GetMapping("searchSpuValue/{spuId}")

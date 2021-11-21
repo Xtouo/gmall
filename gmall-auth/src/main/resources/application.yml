@@ -1,0 +1,37 @@
+server:
+  port: 18089
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.66.66:8080
+    sentinel:
+      transport:
+        dashboard: 120.27.247.160:8080
+        port: 8719
+  zipkin:
+    base-url: http://120.27.247.160:9411
+    discovery-client-enabled: false
+    sender:
+      type: web
+  sleuth:
+    sampler:
+      probability: 1
+  thymeleaf:
+    cache: false
+feign:
+  sentinel:
+    enabled: true
+logging:
+  level:
+    com.atguigu.gmall.auth: debug
+jwt:
+  priFilePath: D:\gmall-rsa\rsa.pri
+  pubFilePath: D:\gmall-rsa\rsa.pub
+  secret: 234LIJOjoerqw#@$J$@)zjdsl213 #加盐
+  expire: 300  #过期时间
+  cookieName: GMALL-TOKEN
+  unick: unick
+ribbon:
+  ReadTimeout:  5000
+  ConnectTimeout: 5000
